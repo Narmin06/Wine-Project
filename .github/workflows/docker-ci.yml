@@ -21,7 +21,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # BACKEND
       - name: Build & Push Backend
         uses: docker/build-push-action@v6
         with:
@@ -30,7 +29,6 @@ jobs:
           push: true
           tags: narmin06/wineapp-backend:latest
 
-      # FRONTEND
       - name: Build & Push Frontend
         uses: docker/build-push-action@v6
         with:
