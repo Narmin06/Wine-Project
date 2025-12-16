@@ -1,0 +1,136 @@
+.sort-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.sort-bar label {
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+}
+
+.sort-bar select {
+  background-color: #7A0000;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.sort-bar select:hover {
+  background-color: #333;
+}
+
+@media (max-width: 1400px) {
+  .sort-bar {
+    margin-bottom: 30px;
+  }
+
+  .sort-bar label {
+    font-size: 24px;
+  }
+
+  .sort-bar select {
+    padding: 9px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sort-bar {
+    margin-bottom: 30px;
+  }
+
+  .sort-bar label {
+    font-size: 22px;
+  }
+
+  .sort-bar select {
+    padding: 9px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sort-bar {
+    display: flex;
+  }
+
+  .sort-bar label {
+    padding-bottom: 1px;
+    font-size: 24px;
+  }
+
+  .sort-bar select {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .sort-bar {
+    display: flex;
+  }
+
+  .sort-bar label {
+    padding-bottom: 9px;
+    font-size: 24px;
+  }
+
+  .sort-bar select {
+    padding: 10px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 660px) {
+  .sort-bar {
+    display: flex;
+  }
+
+  .sort-bar label {
+    padding-bottom: 9px;
+    font-size: 25px;
+  }
+
+  .sort-bar select {
+    padding: 8px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sort-bar {
+    display: flex;
+  }
+
+  .sort-bar label {
+    padding-bottom: 9px;
+    font-size: 22px;
+  }
+
+  .sort-bar select {
+    padding: 8px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 500px) {
+  .sort-bar {
+    display: flex;
+  }
+
+  .sort-bar label {
+    padding-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .sort-bar select {
+    padding: 8px;
+    font-size: 13px;
+  }
+}
