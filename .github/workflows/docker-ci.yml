@@ -17,14 +17,16 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - uses: docker/build-push-action@v6
+      - name: Build & Push Backend
+        uses: docker/build-push-action@v6
         with:
           context: ./backend
           file: ./backend/Dockerfile
           push: true
           tags: narmin06/wineapp-backend:latest
 
-      - uses: docker/build-push-action@v6
+      - name: Build & Push Frontend
+        uses: docker/build-push-action@v6
         with:
           context: ./frontend
           file: ./frontend/Dockerfile
@@ -35,7 +37,8 @@ jobs:
     needs: build-and-push
     runs-on: ubuntu-latest
     steps:
-      - uses: appleboy/ssh-action@v1.0.3
+      - name: Deploy on EC2
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
@@ -44,6 +47,6 @@ jobs:
             set -e
             cd /home/ubuntu/wine-project
 
-            docker compose down --remove-orphans || true
-            docker compose pull
-            docker compose up -d --remove-orphans --force-recreate
+            sg docker -c 'docker compose down --remove-orphans || true'
+            sg docker -c 'docker compose pull'
+            sg docker -c 'docker compose up -d --remove-orphans --force-recreate'
