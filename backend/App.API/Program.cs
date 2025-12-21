@@ -7,9 +7,7 @@ using App.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Controllers + Swagger
 builder.Services.AddControllers();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddEndpointsApiExplorer();
@@ -17,7 +15,6 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo { Title = "App.API", Version = "v1" });
 });
-
 
 builder.Services
     .AddShared(builder.Configuration)
@@ -29,25 +26,35 @@ builder.Services.AddJwt(builder.Configuration);
 
 var app = builder.Build();
 
-// Add new user
-using var scope = app.Services.CreateScope();
-await AutomatedMigration.MigrateAsync(scope.ServiceProvider);
+// ✅ DB migration - retry ilə (SQL gec açılırsa backend ölməsin)
+using (var scope = app.Services.CreateScope())
+{
+    for (var i = 1; i <= 12; i++)
+    {
+        try
+        {
+            await AutomatedMigration.MigrateAsync(scope.ServiceProvider);
+            Console.WriteLine("[MIGRATION] OK");
+            break;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[MIGRATION] DB hazır deyil. Retry {i}/12. Error: {ex.Message}");
+            await Task.Delay(TimeSpan.FromSeconds(5));
+        }
+    }
+}
 
-// Configure the HTTP request pipeline.
+// Pipeline
 app.UseSwagger();
 app.UseSwaggerUI();
 
-
 app.UseCors("AllowReactApp");
-
 app.UseStaticFiles();
 app.UseHttpsRedirection();
 
-// Add Middlewares Here
 app.AddMiddlewares();
-
 app.UseAuthorization();
 
 app.MapControllers();
-
 app.Run();
