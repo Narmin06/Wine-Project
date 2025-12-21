@@ -16,7 +16,7 @@ export default function Slider() {
       image: slide2,
       hasText: true,
       title: "Special offer",
-      subtitle: " AFRICA",
+      subtitle: "PINOT NOIR: BURGUNDY VS. SOUTH AFRICA",
       bottomText: "LEARN MORE",
     },
   ];
