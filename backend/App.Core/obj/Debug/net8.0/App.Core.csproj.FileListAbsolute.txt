@@ -1,0 +1,12 @@
+/src/App.Core/bin/Debug/net8.0/App.Core.deps.json
+/src/App.Core/bin/Debug/net8.0/App.Core.dll
+/src/App.Core/bin/Debug/net8.0/App.Core.pdb
+/src/App.Core/obj/Debug/net8.0/App.Core.csproj.AssemblyReference.cache
+/src/App.Core/obj/Debug/net8.0/App.Core.GeneratedMSBuildEditorConfig.editorconfig
+/src/App.Core/obj/Debug/net8.0/App.Core.AssemblyInfoInputs.cache
+/src/App.Core/obj/Debug/net8.0/App.Core.AssemblyInfo.cs
+/src/App.Core/obj/Debug/net8.0/App.Core.csproj.CoreCompileInputs.cache
+/src/App.Core/obj/Debug/net8.0/App.Core.dll
+/src/App.Core/obj/Debug/net8.0/refint/App.Core.dll
+/src/App.Core/obj/Debug/net8.0/App.Core.pdb
+/src/App.Core/obj/Debug/net8.0/ref/App.Core.dll

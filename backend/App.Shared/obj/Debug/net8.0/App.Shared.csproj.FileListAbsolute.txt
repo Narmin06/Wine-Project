@@ -1,0 +1,15 @@
+/src/App.Shared/bin/Debug/net8.0/App.Shared.deps.json
+/src/App.Shared/bin/Debug/net8.0/App.Shared.dll
+/src/App.Shared/bin/Debug/net8.0/App.Shared.pdb
+/src/App.Shared/bin/Debug/net8.0/App.Core.dll
+/src/App.Shared/bin/Debug/net8.0/App.Core.pdb
+/src/App.Shared/obj/Debug/net8.0/App.Shared.csproj.AssemblyReference.cache
+/src/App.Shared/obj/Debug/net8.0/App.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/src/App.Shared/obj/Debug/net8.0/App.Shared.AssemblyInfoInputs.cache
+/src/App.Shared/obj/Debug/net8.0/App.Shared.AssemblyInfo.cs
+/src/App.Shared/obj/Debug/net8.0/App.Shared.csproj.CoreCompileInputs.cache
+/src/App.Shared/obj/Debug/net8.0/App.Shared.csproj.Up2Date
+/src/App.Shared/obj/Debug/net8.0/App.Shared.dll
+/src/App.Shared/obj/Debug/net8.0/refint/App.Shared.dll
+/src/App.Shared/obj/Debug/net8.0/App.Shared.pdb
+/src/App.Shared/obj/Debug/net8.0/ref/App.Shared.dll
