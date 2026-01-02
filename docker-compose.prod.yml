@@ -7,15 +7,13 @@ services:
       MSSQL_SA_PASSWORD: "Salam123!@"
     ports:
       - "1433:1433"
-    networks:
-      - wine-net
     volumes:
       - mssql_data:/var/opt/mssql
+    networks:
+      - wine-net
 
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile.dev
+    image: narmin06/wineapp-backend:latest
     container_name: wine-backend
     depends_on:
       - db
@@ -26,13 +24,9 @@ services:
       - "5034:5034"
     networks:
       - wine-net
-    volumes:
-      - ./backend:/src
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile.dev
+    image: narmin06/wineapp-frontend:latest
     container_name: wine-frontend
     depends_on:
       - backend
@@ -40,9 +34,6 @@ services:
       - "5173:5173"
     networks:
       - wine-net
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
 
 networks:
   wine-net:
